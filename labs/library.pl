@@ -39,6 +39,11 @@ group('IDB-18-01', 123001).
 group('IDB-18-02', 123002).
 group('IDB-18-03', 123003).
 
+hobby(123000, ['Java', 'Go']).
+hobby(123001, ['C++', 'Linux']).
+hobby(123002, ['Python', 'Go']).
+hobby(123003, ['C', 'C++']).
+
 /* Book info. */
 
 book(000100).
@@ -92,3 +97,12 @@ question_4(BookName) :- book_name(BookName, Number), author(Author, Number),
   student_name(StudentName, Student), group(Group, Student),
   write(StudentName), write(' '), write(Group), write('\n'), fail.
 
+/* Laboratory work #4. */
+
+find_student(Hobbies) :-
+    student(Student), hobby(Student, What),
+    intersection(What, Hobbies, Intersection),
+    Intersection \= [],
+    student_name(Name, Student),
+    write(Name), write(' '),
+    printls(Intersection).
