@@ -48,7 +48,7 @@ def cli(visualize, path, wide_search, depth_search):
     if wide_search is not None:
         algo = gpt.WideSearch(graph)
         path, step = algo.search(wide_search)
-        click.echo('Wide-search algorithm...\nPath: {}\nStep: {}'
+        click.echo('Алгоритм поиска в ширину...\nПуть: {}\nШаг: {}'
                    .format(path, step))
 
     if depth_search is not None:
@@ -57,12 +57,12 @@ def cli(visualize, path, wide_search, depth_search):
 
         algo = gpt.RecursiveDepthSearch(graph)
         path, step = algo.search(depth_search)
-        click.echo('Iterative depth-search algorithm...\nPath: {}\nStep: {}\n'
+        click.echo('Итеративный алгоритм поиска в глубину...\nПуть: {}\nШаг: {}\n'
                    .format(path, step))
 
         algo = gpt.RecursiveDepthSearch(graph)
         path, step = algo.search(depth_search)
-        click.echo('Recursive depth-search algorithm...\nPath: {}\nStep: {}'
+        click.echo('Рекурсивный алгоритм поиска в глубину...\nПуть: {}\nШаг: {}'
                    .format(path, step))
 
     if visualize:
